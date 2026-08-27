@@ -15,9 +15,9 @@ sizes = [2000, 4000, 8000, 16000, 32000, 64000]
 
 for n in sizes:
 
-    print("\n" + "=" * 55)
+    print("\n" + "=" * 50)
     print(f"Vector dimension: {n}")
-    print("=" * 55)
+    print("=" * 50)
 
     # ----------------------------------------
     # Create data using custom Vec
