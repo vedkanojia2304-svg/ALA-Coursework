@@ -129,3 +129,28 @@ class Vec:
             total += x * x
 
         return math.sqrt(total)
+
+    
+    def mean(self):
+        """Calculate the arithmetic mean of the vector."""
+
+        if len(self.elements) == 0:
+            raise ValueError("Cannot calculate mean of an empty vector.")
+
+        return sum(self.elements) / len(self.elements)
+
+    def demean(self):
+        """Return a new vector with its mean subtracted."""
+
+        average = self.mean()
+
+        return Vec([x - average for x in self.elements])
+
+    def std(self):
+        """Calculate the population standard deviation."""
+
+        deviations = self.demean()
+
+        squared_sum = sum(x ** 2 for x in deviations.elements)
+
+        return math.sqrt(squared_sum / len(self.elements))

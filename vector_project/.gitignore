@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+.vscode/
+
+// This tells Git to ignore Python cache files and your local VS Code settings
