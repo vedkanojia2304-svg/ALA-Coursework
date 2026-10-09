@@ -1,7 +1,9 @@
-# This file includes steps 1,2 and 3 (Steps.txt)
+
+# This file includes steps 1, 2 and 3 (Steps.txt)
 
 import math
 import random
+
 
 class Vec:
     """A simple class for representing mathematical vectors."""
@@ -73,7 +75,6 @@ class Vec:
 
     def __neg__(self):
         """Return the negative of the vector."""
-
         return Vec([-x for x in self.elements])
 
     def __radd__(self, other):
@@ -94,30 +95,25 @@ class Vec:
 
     def __len__(self):
         """Return the number of elements in the vector."""
-
         return len(self.elements)
 
     def __repr__(self):
         """Return a readable representation of the vector."""
-
         return repr(self.elements)
 
     @staticmethod
     def zeros(n):
         """Create a vector containing n zeros."""
-
         return Vec([0] * n)
 
     @staticmethod
     def ones(n):
         """Create a vector containing n ones."""
-
         return Vec([1] * n)
 
     @staticmethod
     def uniform(n):
         """Create a vector containing n random numbers between 0 and 1."""
-
         return Vec([random.random() for _ in range(n)])
 
     def norm(self):
@@ -129,28 +125,3 @@ class Vec:
             total += x * x
 
         return math.sqrt(total)
-
-    
-    def mean(self):
-        """Calculate the arithmetic mean of the vector."""
-
-        if len(self.elements) == 0:
-            raise ValueError("Cannot calculate mean of an empty vector.")
-
-        return sum(self.elements) / len(self.elements)
-
-    def demean(self):
-        """Return a new vector with its mean subtracted."""
-
-        average = self.mean()
-
-        return Vec([x - average for x in self.elements])
-
-    def std(self):
-        """Calculate the population standard deviation."""
-
-        deviations = self.demean()
-
-        squared_sum = sum(x ** 2 for x in deviations.elements)
-
-        return math.sqrt(squared_sum / len(self.elements))

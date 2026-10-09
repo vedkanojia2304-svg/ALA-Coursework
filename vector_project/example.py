@@ -1,4 +1,5 @@
-# This file demonstrates Step 5 of your assignment (Steps.txt)
+
+# Demonstration of the Vec class
 
 from vec import Vec
 
@@ -7,44 +8,35 @@ from vec import Vec
 v1 = Vec([1, 2, 3])
 v2 = Vec([4, 5, 6])
 
-
-# Display vectors
-print("v1 =", v1)
-print("v2 =", v2)
-
+print("Vector 1:", v1)
+print("Vector 2:", v2)
 
 # Vector addition
-print("v1 + v2 =", v1 + v2)
-
+print("Addition:", v1 + v2)
 
 # Vector subtraction
-print("v1 - v2 =", v1 - v2)
-
+print("Subtraction:", v2 - v1)
 
 # Scalar multiplication
-print("2 * v1 =", 2 * v1)
+print("Scalar multiplication:", 2 * v1)
 
+# In-place multiplication
+v3 = Vec([1, 2, 3])
+v3 *= 3
+print("In-place multiplication:", v3)
 
-# Negative vector
-print("-v1 =", -v1)
-
-
-# Vector dimension
-print("Dimension of v1 =", len(v1))
-
-
-# Vector norm
-print("Norm of v1 =", v1.norm())
-
+# Negation
+print("Negation:", -v1)
 
 # Zero vector
-print("Zero vector =", Vec.zeros(5))
+print("Zeros:", Vec.zeros(5))
 
-
-# Ones vector
-print("Ones vector =", Vec.ones(5))
-
+# One vector
+print("Ones:", Vec.ones(4))
 
 # Random vector
-print("Random vector =", Vec.uniform(5))
+print("Random vector:", Vec.uniform(3))
 
+# Euclidean norm
+v4 = Vec([3, 4])
+print("Norm:", v4.norm())
